@@ -35,9 +35,14 @@ void PrintArray(string[] arr)
     }
     Console.Write($"{arr[arr.Length - 1]}]");
 }
+
+Console.WriteLine("Введите данные через пробел: ");
 string[] incomingarray = Console.ReadLine()!.Split(' ');
 
 int size = SizeOfOutputArrayIfLess4(incomingarray);
+
+if (size == 0)
+    size = 1;
 
 Console.WriteLine(size);
 
