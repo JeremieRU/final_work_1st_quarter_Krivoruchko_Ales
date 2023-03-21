@@ -11,8 +11,40 @@
     return size;
 }
 
+void FillOutputArray(string[] arr1, string[] arr2)
+{
+    int l = 0;
+    int s = 0;
+    while (l < arr1.Length)
+    {
+        if (arr1[l].Length <= 3)
+        {
+            arr2[s] = arr1[l];
+            s++;
+        }
+        l++;
+    }
+}
+
+void PrintArray(string[] arr)
+{
+    Console.Write("[");
+    for (int j = 0; j < arr.Length - 1; j++)
+    {
+        Console.Write($"{arr[j]}, ");
+    }
+    Console.Write($"{arr[arr.Length - 1]}]");
+}
 string[] incomingarray = Console.ReadLine()!.Split(' ');
 
 int size = SizeOfOutputArrayIfLess4(incomingarray);
 
-Console.Write(size);
+Console.WriteLine(size);
+
+string[] outputarray = new string[size];
+
+FillOutputArray(incomingarray, outputarray);
+
+PrintArray(incomingarray);
+Console.Write(" -> ");
+PrintArray(outputarray);
