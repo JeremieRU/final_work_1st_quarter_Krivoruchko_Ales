@@ -44,8 +44,6 @@ int size = SizeOfOutputArrayIfLess4(incomingarray);
 if (size == 0)
     size = 1;
 
-Console.WriteLine(size);
-
 string[] outputarray = new string[size];
 
 FillOutputArray(incomingarray, outputarray);
